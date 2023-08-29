@@ -15,6 +15,8 @@
   - create redux store with userslice
   - implement signout
   - update user profile
+  - update api call
+  - fixed bug
 
 # Features
 
