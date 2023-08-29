@@ -17,10 +17,8 @@ const Login = () => {
   const password = useRef(null)
   const handleClick = () => {
     //Validate form data
-    console.log(email.current.value)
     const message = chechValidData(email.current.value, password.current.value)
     setError(message)
-    console.log(message)
     if (message) return
 
     if (!isSignInForm) {
@@ -46,7 +44,6 @@ const Login = () => {
            setError(error.message)
           });
           
-          // console.log(user)
           
           // ...
         })
