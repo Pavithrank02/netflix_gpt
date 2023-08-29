@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react'
 import Header from './Header'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { chechValidData } from '../utils/validate'
 import { auth } from '../utils/firebase';
+import { useNavigate } from 'react-router';
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true)
@@ -10,6 +11,7 @@ const Login = () => {
   const name = useRef(null)
   const email = useRef(null)
   const password = useRef(null)
+  const navigate = useNavigate()
   const handleClick = () => {
     //Validate form data
     console.log(email.current.value)
@@ -25,7 +27,18 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
-          console.log(user)
+          updateProfile(user, {
+            displayName: name.current.value, photoURL: "https://avatars.githubusercontent.com/u/109362091?v=4"
+          }).then(() => {
+            // Profile updated!
+            navigate("/browse")
+            // ...
+          }).catch((error) => {
+           setError(error.message)
+          });
+          
+          // console.log(user)
+          
           // ...
         })
         .catch((error) => {
@@ -44,6 +57,7 @@ const Login = () => {
           // Signed in 
           const user = userCredential.user;
           console.log(user)
+          navigate("/browse")
           // ...
         })
         .catch((error) => {
