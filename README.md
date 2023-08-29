@@ -28,6 +28,7 @@
   - update store with video data
   - embedded the youtube video
   - tailwind classes were provided
+  - Build secondary components
 
 # Features
 
