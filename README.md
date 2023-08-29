@@ -17,6 +17,8 @@
   - update user profile
   - update api call
   - fixed bug
+  - unsubscribed to the onAuthstagecall back
+  - created constants file for standard practice
 
 # Features
 
