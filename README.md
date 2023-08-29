@@ -19,6 +19,8 @@
   - fixed bug
   - unsubscribed to the onAuthstagecall back
   - created constants file for standard practice
+  - Register for TMDB website to access movie API
+  - called API with fetch
 
 # Features
 
