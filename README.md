@@ -17,6 +17,18 @@
   - update user profile
   - update api call
   - fixed bug
+  - unsubscribed to the onAuthstagecall back
+  - created constants file for standard practice
+  - Register for TMDB website to access movie API
+  - called API with fetch
+  - create custom hook now playing movies
+  - update store with movies data
+  - planning for containers
+  - customer hook for trailer video
+  - update store with video data
+  - embedded the youtube video
+  - tailwind classes were provided
+  - Build secondary components
 
 # Features
 
