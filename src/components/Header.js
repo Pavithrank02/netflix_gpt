@@ -6,11 +6,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
 import { Logo, SUPPORTED_LANGUAGES } from '../utils/constants';
 import { toggleGptSearch } from '../utils/gptSlice';
+import { changeLanguage } from '../utils/configSlice';
 
 const Header = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const user = useSelector(store => store.user)
+  const showGptSearch = useSelector(store => store.gpt.showGpt)
   const handleSignOut = () => {
     signOut(auth).then(() => {
       // Sign-out successful.
@@ -53,6 +55,11 @@ const Header = () => {
   const handleGptClick = () => {
     dispatch(toggleGptSearch())
   }
+
+  const handleLanguage = (e) => {
+
+    dispatch(changeLanguage(e.target.value))
+  }
   return (
     <div className='absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between'>
       <img
@@ -60,14 +67,19 @@ const Header = () => {
         src={Logo} />
       {user &&
         (<div className='flex p-2'>
-          <select className='p-2 m-2 bg-gray-900 text-white'>
-          {SUPPORTED_LANGUAGES.map((lang) => (
-                <option key={lang.identifier} value={lang.identifier}>
-                  {lang.name}
-                </option>
-              ))}
-            </select>
-          <button className='py-1 px-2 bg-purple-800 text-white rounded-lg mr-3' onClick={handleGptClick}>GPT Search</button>
+          {showGptSearch && <select className='p-2 m-2 bg-gray-900 text-white' onChange={handleLanguage}>
+            {SUPPORTED_LANGUAGES.map((lang) => (
+              <option key={lang.identifier} value={lang.identifier}>
+                {lang.name}
+              </option>
+            ))}
+          </select>}
+          {<button
+            className='py-1 px-2 bg-purple-800 text-white rounded-lg mr-3'
+            onClick={handleGptClick}
+          >
+            {showGptSearch ? "Home Page" : "GPT Search" }
+          </button>}
           <img
             className='w-10 h-10 mt-3'
             src={user?.photoURL} />
