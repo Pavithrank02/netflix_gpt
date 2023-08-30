@@ -39,6 +39,12 @@
   - GPT Search bar
   - Multilangauge Feature in page
   - Integrate GPT API
+  - Resused Movie List component to make movie   
+  - suggestion container
+  - Memoization
+  - Added .env file
+  - Adding .env file to gitignore
+  - Made our Site Responsive
 # Features
 
 - Login-Sign page

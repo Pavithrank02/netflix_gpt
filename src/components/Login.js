@@ -32,19 +32,19 @@ const Login = () => {
             displayName: name.current.value, photoURL: USER_AVATAR
           }).then(() => {
             // Profile updated!
-            const {uid, email, displayName, photoURL} = auth.currentUser;
+            const { uid, email, displayName, photoURL } = auth.currentUser;
             dispatch(addUser({
-              uid: uid, 
-              email: email, 
-              displayName: displayName, 
+              uid: uid,
+              email: email,
+              displayName: displayName,
               photoURL: photoURL
             }))
             // ...
           }).catch((error) => {
-           setError(error.message)
+            setError(error.message)
           });
-          
-          
+
+
           // ...
         })
         .catch((error) => {
@@ -67,7 +67,7 @@ const Login = () => {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          setError( errorCode + errorMessage)
+          setError(errorCode + errorMessage)
         });
     }
   }
@@ -80,12 +80,15 @@ const Login = () => {
       <Header />
       <div className='absolute'>
         <img
+          className='h-screen object-cover'
           src={BG_URL}
           alt='Netflix Logo'
         />
       </div>
-      <form onSubmit={(e) => e.preventDefault()} className='w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80'>
-        <h1 className='font-bold text-3xl py-4'>{isSignInForm ? "Sign In" : "Sign Up"}</h1>
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        className='w-3/4 md:w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80'>
+        <h1 className='text-2xl font-bold md:text-3xl py-4'>{isSignInForm ? "Sign In" : "Sign Up"}</h1>
         {!isSignInForm && <input ref={name} type='test' placeholder='Full Name' className='p-4 my-2 w-full bg-gray-700 rounded-lg' />}
         <input ref={email} type='text' placeholder='Email Address' className='p-4 my-2 w-full bg-gray-700 rounded-lg' />
         <input ref={password} type='password' placeholder='Password' className='p-4 my-2 w-full bg-gray-700 rounded-lg' />
