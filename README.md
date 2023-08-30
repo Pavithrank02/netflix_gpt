@@ -35,6 +35,10 @@
   - Made the Browsre page amazing with Tailwind CSS
   - usePopularMovies Custom hook
   - useTrendeing Custom hook
+  - GPT Serach page
+  - GPT Search bar
+  - Multilangauge Feature in page
+  - Integrate GPT API
 # Features
 
 - Login-Sign page
