@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router';
 import { auth } from '../utils/firebase';
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
 import { Logo, SUPPORTED_LANGUAGES } from '../utils/constants';
@@ -78,7 +78,7 @@ const Header = () => {
             className='py-1 px-2 bg-purple-800 text-white rounded-lg mr-3'
             onClick={handleGptClick}
           >
-            {showGptSearch ? "Home Page" : "GPT Search" }
+            {showGptSearch ? "Home Page" : "GPT Search"}
           </button>}
           <img
             className='hidden md:block w-10 h-10 mt-3'

@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { API_OPTIONS } from '../utils/constants'
 import { addTrailerVideo } from '../utils/movieSlice'
 const useTrailerVideo = (movieId) => {
- 
+
   const dispatch = useDispatch()
-  
+
   const trailerVideo = useSelector(
     (store) => store.movies.trailerVideo
   );

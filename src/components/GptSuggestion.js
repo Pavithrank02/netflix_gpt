@@ -4,24 +4,22 @@ import MovieList from "./MovieList";
 
 const GptSuggestion = () => {
 
-  const  movieResults  = useSelector((store) => store.gpt?.movieVideo);
-  // console.log(movieResults)
-  if (!movieResults) return null;
+  const { movieResults, movieNames } = useSelector((store) => store.gpt);
+  if (!movieNames) return null;
 
   return (
     <div className="p-4 m-4 bg-black text-white bg-opacity-90">
       <div>
-        {movieResults.map((movieName, index) => (
-          // console.log(movieName)
+        {movieNames.map((movieName, index) => (
           <MovieList
             key={movieName}
-            title={movieName.title}
-            movies={movieResults}
+            title={movieName}
+            movies={movieResults[index]}
           />
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default GptSuggestion
