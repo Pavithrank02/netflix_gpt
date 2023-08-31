@@ -26,6 +26,8 @@ const Login = () => {
       //Signiup logic
       createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
+
+          console.log(userCredential)
           // Signed in 
           const user = userCredential.user;
           updateProfile(user, {
@@ -60,6 +62,7 @@ const Login = () => {
       //signin logic
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
+          console.log(userCredential)
           // Signed in 
           const user = userCredential.user;
           // ...
