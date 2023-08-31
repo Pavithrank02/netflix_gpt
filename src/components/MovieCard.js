@@ -11,7 +11,7 @@ const MovieCard = ({id, posterPath }) => {
     navigate(`/${id}`)
   }
   return (
-    <div className='w-36 pr-4 cursor-pointer' onClick={handleLink}>
+    <div className='w-36 pr-4 cursor-pointer hover:opacity-70' onClick={handleLink}>
       <img
         alt='Movie card'
         src={IMG_CDN + posterPath}

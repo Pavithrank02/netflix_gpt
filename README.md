@@ -45,6 +45,9 @@
   - Added .env file
   - Adding .env file to gitignore
   - Made our Site Responsive
+  - Added Movie Details Page
+  - Similar movies suggestion for each movie is provided
+  - Added back option
 # Features
 
 - Login-Sign page

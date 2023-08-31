@@ -1,32 +1,31 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import useMovieDetails from '../hooks/useMovieDetails'
 import { useLocation } from 'react-router-dom'
 import useMovieSimilar from '../hooks/useMovieSimilar'
-import MovieList from './MovieList'
+import MovieCard from './MovieCard'
 
 const MovieInfo = () => {
   const history = useLocation()
   useMovieSimilar(history.pathname)
 
-const movieInfo = useSelector((store => store.movies?.moviesDetails))
-const movieNames = useSelector((store => store.movies?.similarMovies))
+  const movieInfo = useSelector((store => store.movies?.moviesDetails))
+  const movieNames = useSelector((store => store.movies?.similarMovies))
   return movieInfo && (
     <>
-      <div className='absolute flex -mt-32 ml-24'>
+      <div className='absolute flex -mt-24 ml-6 md:-mt-48 md:ml-24'>
         <p className='font-bold text-white p-2'>Runtime: {movieInfo.runtime}Mins</p>
         <p className='font-bold text-white p-2'>Realeased: {movieInfo.release_date}📅</p>
         <p className='font-bold text-white p-2'>Rating: {Math.round(movieInfo.vote_average * 100) / 100}⭐</p>
       </div>
-      <div className="p-4 m-4 bg-black text-white bg-opacity-90">
-        <div>
+      <p className='font-bold text-3xl ml-4 md:ml-6 md:mt-2'>Similar Movies</p>
+      <div className="p-4 m-4 bg-gray-700 text-white bg-opacity-20 flex">
+        <div className=''>
           {movieNames && movieNames.map((movieName, index) => (
-console.log("h", movieNames)
-            // <MovieList
-            //   key={movieName.id}
-            //   title={movieName.title}
-            //   movies={movieNames}
-            // />
+            <>
+              <p className='text-xl font-bold'>{movieName.title}</p>
+              <MovieCard posterPath={movieName.poster_path
+              } />
+            </>
           ))}
         </div>
       </div>

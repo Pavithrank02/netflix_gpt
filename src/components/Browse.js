@@ -7,6 +7,7 @@ import usePopularMovies from '../hooks/usePopularMovies'
 import useTrendingMovies from '../hooks/useTrendingMovies'
 import Header from './Header'
 import GptSearch from './GptSearch'
+import useUpcomingMovies from '../hooks/useUpcomingMovies'
 
 
 const Browse = () => {
@@ -16,6 +17,7 @@ const Browse = () => {
   useNowPlayingMovies()
   usePopularMovies()
   useTrendingMovies()
+  useUpcomingMovies()
 
   return (
     <div>
