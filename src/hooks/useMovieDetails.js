@@ -11,18 +11,18 @@ const useMovieDetails = (props) => {
   const movieDetails = useSelector(
     (store) => store.movies.movieDetails
   );
-    console.log(props)
+
   const getMovieDetails = async () => {
     const data = await fetch(
       `https://api.themoviedb.org/3/movie${props}?language=en-US`,
       API_OPTIONS
     );
     const json = await data.json();
-    dispatch(addMoviesDetails(json.results));
+    dispatch(addMoviesDetails(json));
   };
 
   useEffect(() => {
-   !movieDetails && getMovieDetails();
+   getMovieDetails();
   }, []);
 };
 

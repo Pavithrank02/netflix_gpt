@@ -8,9 +8,7 @@ const MovieCard = ({id, posterPath }) => {
   const navigate = useNavigate()
 
   const handleLink = () => {
-    console.log("clicked id number", id)
     navigate(`/${id}`)
-    console.log("clicked")
   }
   return (
     <div className='w-36 pr-4 cursor-pointer' onClick={handleLink}>
