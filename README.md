@@ -48,6 +48,7 @@
   - Added Movie Details Page
   - Similar movies suggestion for each movie is provided
   - Added back option
+  configured app
 # Features
 
 - Login-Sign page
