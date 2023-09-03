@@ -15,7 +15,7 @@ const Header = () => {
   const showGptSearch = useSelector(store => store.gpt.showGpt)
   const handleSignOut = () => {
     signOut(auth).then(() => {
-      // Sign-out successful.
+      // Sign-out successful
 
     }).catch((error) => {
       // An error happened.
