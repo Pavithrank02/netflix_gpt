@@ -16,7 +16,7 @@ const MovieDetails = () => {
   }
 
   return (
-    <div className='flex flex-col bg-black text-white'>
+    <div className='flex flex-col bg-black text-white w-screen'>
       <div className='absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between'>
        <img
        onClick={handleClick}

@@ -4,7 +4,7 @@ import appStore from './utils/appStore';
 
 function App() {
   return (
-    <div>
+    <div className='bg-black w-screen'>
       <Provider store={appStore}>
         <Body />
       </Provider>

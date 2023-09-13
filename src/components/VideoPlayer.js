@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import VideoTitle from './VideoTitle'
 import VideoBackground from './VideoBackground'
-import useMovieDetails from '../hooks/useMovieDetails'
 import { useLocation } from 'react-router-dom'
 
 

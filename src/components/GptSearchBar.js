@@ -23,7 +23,6 @@ const GptSearchBar = () => {
   };
 
   const handleGptClick = async () => {
-    console.log(searchText.current.value);
     // Make an API call to GPT API and get Movie Results
 
     const gptQuery =
@@ -40,7 +39,6 @@ const GptSearchBar = () => {
       // TODO: Write Error Handling
     }
 
-    console.log(gptResults.choices?.[0]?.message?.content);
 
     // Andaz Apna Apna, Hera Pheri, Chupke Chupke, Jaane Bhi Do Yaaro, Padosan
     const gptMovies = gptResults.choices?.[0]?.message?.content.split(",");
@@ -54,7 +52,7 @@ const GptSearchBar = () => {
 
     const tmdbResults = await Promise.all(promiseArray);
 
-    console.log(tmdbResults);
+
 
     dispatch(
       addGptMovieResult({ movieNames: gptMovies, movieResults: tmdbResults })
@@ -62,7 +60,7 @@ const GptSearchBar = () => {
   };
 
   return (
-    <div className='pt-[35%] md:pt-[10%] flex justify-center'>
+    <div className='pt-[35%] md:pt-[10%] flex justify-center '>
       <form className='w-full md:w-1/2 bg-black grid grid-cols-12' onSubmit={(e) => e.preventDefault()}>
         <input
           ref={searchText}
