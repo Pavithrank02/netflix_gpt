@@ -10,7 +10,6 @@ const MovieInfo = () => {
 
   const movieInfo = useSelector((store => store.movies?.moviesDetails))
   const movieNames = useSelector((store => store.movies?.similarMovies))
-  console.log(movieNames)
   return movieInfo && (
     <>
       <div className='absolute flex -mt-24 ml-6 md:-mt-48 md:ml-24'>
