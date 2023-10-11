@@ -33,7 +33,7 @@ const Login = () => {
           updateProfile(user, {
             displayName: name.current.value, photoURL: USER_AVATAR
           }).then(() => {
-            // Profile updated!
+   
             const { uid, email, displayName, photoURL } = auth.currentUser;
             dispatch(addUser({
               uid: uid,
