@@ -27,7 +27,6 @@ const Login = () => {
       createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
 
-          console.log(userCredential)
           // Signed in 
           const user = userCredential.user;
           updateProfile(user, {
